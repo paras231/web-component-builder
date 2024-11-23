@@ -2,7 +2,6 @@ import React from "react";
 import { sideElems } from "../utils/sideElem";
 import { useDraggable } from "@dnd-kit/core";
 const SidebarElemens = (props) => {
-  
   return (
     <>
       <section>
@@ -11,6 +10,9 @@ const SidebarElemens = (props) => {
             const { attributes, listeners, setNodeRef, transform } =
               useDraggable({
                 id: elem.id.toString(), // Use elem.id as the draggable ID
+                data: {
+                  tagName: elem.tagName,
+                },
               });
             return (
               <div
