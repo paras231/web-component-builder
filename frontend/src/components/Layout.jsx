@@ -7,7 +7,7 @@ const Layout = () => {
   const [selectedElement, setSelectedElement] = useState(null);
   const [canvasContent, setCanvasContent] = useState([]);
   function onDragEnd(event) {
-    console.log(event);
+    // console.log(event);
     const { active, over } = event;
     if (over && over.id === "droppable") {
       // handle logic after dropping element on droppable div
@@ -22,9 +22,13 @@ const Layout = () => {
     }
   }
 
+  function onDragOver(event) {
+    console.log(event);
+  }
+
   return (
     <>
-      <DndContext onDragEnd={onDragEnd}>
+      <DndContext onDragEnd={onDragEnd} onDragOver={onDragOver}>
         <main className="flex justify-center items-center mt-20 space-x-10">
           <SidebarElemens />
           <CanvasManager
