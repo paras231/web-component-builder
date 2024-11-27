@@ -22,13 +22,16 @@ const Layout = () => {
     }
   }
 
-  function onDragOver(event) {
-    console.log(event);
-  }
+  const handleDragOver = (event) => {
+    
+  };
+
+  
+ 
 
   return (
     <>
-      <DndContext onDragEnd={onDragEnd} onDragOver={onDragOver}>
+      <DndContext onDragEnd={onDragEnd} onDragOver={handleDragOver}>
         <main className="flex justify-center items-center mt-20 space-x-10">
           <SidebarElemens />
           <CanvasManager
@@ -36,6 +39,7 @@ const Layout = () => {
             setSelectedElement={setSelectedElement}
             canvasContent={canvasContent}
             setCanvasContent={setCanvasContent}
+            
           />
         </main>
       </DndContext>

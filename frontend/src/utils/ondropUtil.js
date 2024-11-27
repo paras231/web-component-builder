@@ -16,11 +16,14 @@ export function handleElementAfterDrop(active, over, data, ...args) {
   }
   if (active && active.data.current.tagName === "div") {
     // console.log(container.droppableContainer.node);
+
+    // calculate the position of items placed on canvas
+
     setCanvasContent([
       ...canvasContent,
       {
         tagName: "div",
-        props: { className: "flex justify-center items-center " },
+        props: { className: "flex justify-center rounded-md border-2 border-slate-950 items-center " },
         children: [
           { tagName: "h1", children: "Here is h1 tag" },
           "Some additional text here",
